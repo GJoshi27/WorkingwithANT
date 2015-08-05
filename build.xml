@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Created by Gaurav Joshi M.Tech CS for FIFO -->
+
+<project name="WorkingwithANT" default="BuildJar">
+
+<property name="ExJarPath" location="/home/dude/Desktop/DC/DCJarFile/clipc.jar"/> <!-- Path of external library clipc -->
+<property name="obj" location="out/"/> <!-- directory containing class files -->
+<property name="lib" location="lib/"/> <!-- directory containing created jar files -->
+<property name="src" location="src/"/> <!-- directory containing source code files-->
+<!--property name="jarFile" location="fifo.jar"\-->
+
+  <target name="clean" description="Delete all generated class files">
+    <delete dir="${obj}"/>
+    <delete dir="${lib}"/>
+  </target>
+
+  <target name="compile"  description="Compile Code">
+    <mkdir dir="${obj}"/>
+    <javac includeantruntime="false" srcdir="${src}" destdir="${obj}">
+      <classpath>
+        <pathelement path="${ExJarPath}"/>
+      </classpath>
+    </javac>
+  </target>
+
+  <target name="BuildJar" depends="compile" description="Build jar file">
+    <mkdir dir="${lib}"/>
+   <jar destfile="${lib}/fifo.jar"
+      basedir="${obj}"/>
+   <!--Not creating Manifest files for now -->
+   <!--manifest>
+  <attribute name="Main-Class" value="asyncfifo.AsyncFIFO"/>
+   </manifest-->
+  </target>
+
+</project>

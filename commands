@@ -1,0 +1,6 @@
+you will need libclipc.so
+java -cp '.:/home/dude/NetBeansProjects/AsyncFIFO/lib/*' -Djava.library.path=. asyncfifo/AsyncFIFO
+java -cp '.:/home/dude/NetBeansProjects/AsyncFIFO/lib/*' asyncfifo/AsyncFIFO
+-Djava.library.path #this determines the java.library.path
+java -cp '.:./clipc.jar:util.jar'  -Djava.library.path=. asyncfifo.AsyncFIFO
+java -cp '.:/home/dude/Desktop/DC/DCJarFile/clipc.jar:lib/fifo.jar' -Djava.library.path=. asyncfifo.AsyncReader
